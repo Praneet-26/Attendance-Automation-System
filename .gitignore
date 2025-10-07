@@ -211,3 +211,8 @@ __marimo__/
 **/db.yml
 venv
 *__pycache__
+face_trained.yml
+features.npy
+labels.npy
+**/photos
+**/train
