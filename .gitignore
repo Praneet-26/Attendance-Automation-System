@@ -210,9 +210,11 @@ __marimo__/
 *.pyc
 **/db.yml
 venv
+haar
 *__pycache__
 face_trained.yml
 features.npy
 labels.npy
 **/photos
 **/train
+SES_EMAIL.txt
