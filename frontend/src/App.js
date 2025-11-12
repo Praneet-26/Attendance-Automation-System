@@ -25,7 +25,7 @@ import awsExports from "./aws-exports";
 
 Amplify.configure(awsExports);
 
-import BASE_URL from './config';
+// import BASE_URL from './config';
 const apiUrl = process.env.REACT_APP_API_ENDPOINT;
 const uuid = require("uuid");
 
