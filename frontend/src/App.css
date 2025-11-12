@@ -1,0 +1,84 @@
+.App {
+  text-align: center;
+  background-color: #000;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+
+h1 {
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+}
+
+/* Course boxes layout */
+.course-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px; /* more spacing between boxes */
+  max-width: 1300px;
+}
+
+/* Each course box */
+.course-card {
+  background-color: #111;
+  border: 2px solid #222;
+  border-radius: 18px;
+  padding: 40px 45px;
+  width: 300px;   /* slightly larger */
+  height: 260px;
+  
+  /* More visible shadows (dark + cyan glow) */
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.9),     /* deep dark shadow */
+    0 0 25px rgba(0, 170, 255, 0.35),  /* outer cyan glow */
+    0 0 60px rgba(0, 150, 255, 0.2);   /* extended soft glow */
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.95),
+    0 0 35px rgba(0, 220, 255, 0.6),
+    0 0 80px rgba(0, 180, 255, 0.3);
+}
+
+.course-card h2 {
+  margin-bottom: 25px;
+  font-size: 1.4rem;
+}
+
+/* Button layout inside each card */
+.button-container.small {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.top-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Buttons slightly larger */
+.small-button {
+  font-size: 0.95rem;
+  padding: 12px 22px;
+  border-radius: 10px;
+  min-width: 120px;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.small-button:hover {
+  transform: scale(1.07);
+}

@@ -1,7 +1,12 @@
+variable "github_token" {
+  description = "GitHub personal access token for Amplify connection"
+  type        = string
+  sensitive   = true
+}
 resource "aws_amplify_app" "my_app" {
   name       = "Attendance_Automation"
   repository = "https://github.com/Praneet-26/Attendance-Automation-System.git"
-  #access_token = {github_token} add github token for access
+  access_token = var.github_token #add github token for access
   platform    = "WEB" 
 
   //Configure the branch that Amplify will use
@@ -11,7 +16,7 @@ resource "aws_amplify_app" "my_app" {
         phases:
           preBuild:
             commands:
-                - cd homepage
+                - cd frontend
                 - npm install
           build:
             commands:
