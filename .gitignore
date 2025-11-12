@@ -231,6 +231,7 @@ frontend/node_modules
 
 # production
 /build
+*/photos
 
 # misc
 .DS_Store
