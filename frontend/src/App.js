@@ -28,7 +28,6 @@ Amplify.configure(awsExports);
 // import BASE_URL from './config';
 const apiUrl = process.env.REACT_APP_API_ENDPOINT;
 const uuid = require("uuid");
-
 function App() {
   console.log("API-", apiUrl);
 
@@ -155,6 +154,7 @@ function App() {
 
   return (
     <div>
+    <Authenticator>
    <div className="App">
       <h1>Attendance Automation</h1>
 
@@ -181,9 +181,9 @@ function App() {
           </div>
         ))}
       </div>
+    </Authenticator>
     </div>
   );
-      <Authenticator>
         {({ signOut }) => (
           <main>
             <div className="header">
