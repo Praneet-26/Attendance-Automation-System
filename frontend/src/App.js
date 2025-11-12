@@ -28,6 +28,7 @@ Amplify.configure(awsExports);
 // import BASE_URL from './config';
 const apiUrl = process.env.REACT_APP_API_ENDPOINT;
 const uuid = require("uuid");
+
 function App() {
   console.log("API-", apiUrl);
 
@@ -154,36 +155,7 @@ function App() {
 
   return (
     <div>
-    <Authenticator>
-   <div className="App">
-      <h1>Attendance Automation</h1>
-
-      <div className="course-grid">
-        {courses.map((course) => (
-          <div key={course} className="course-card">
-            <h2>{course}</h2>
-
-            <div className="button-container small">
-              <div className="top-buttons">
-                <Button color="primary" className="small-button">
-                  Register
-                </Button>
-                <Button color="success" className="small-button">
-                  Mark Attendance
-                </Button>
-              </div>
-              <div className="bottom-button">
-                <Button color="info" className="small-button">
-                  View Reports
-                </Button>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </Authenticator>
-    </div>
-  );
+            <Authenticator>
         {({ signOut }) => (
           <main>
             <div className="header">
@@ -327,6 +299,32 @@ function App() {
         )}
       </Authenticator> 
     </div>
+   /* <div className="App">
+      <h1>Attendance Automation</h1>
+
+      <div className="course-grid">
+        {courses.map((course) => (
+          <div key={course} className="course-card">
+            <h2>{course}</h2>
+
+            <div className="button-container small">
+              <div className="top-buttons">
+                <Button color="primary" className="small-button">
+                  Register
+                </Button>
+                <Button color="success" className="small-button">
+                  Mark Attendance
+                </Button>
+              </div>
+              <div className="bottom-button">
+                <Button color="info" className="small-button">
+                  View Reports
+                </Button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div> */
   );
 }
 
