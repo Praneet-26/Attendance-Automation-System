@@ -160,7 +160,7 @@ function App() {
           <main>
             <div className="header">
               <img src={logo} alt="Logo" />
-              <h1>Attendance Automation</h1>
+              <h1>Attendance Automation System</h1>
               {/* <button onClick={() => Auth.signOut()}>Sign Out</button> */}
 
               <Button onClick={signOut}>Sign Out</Button>
