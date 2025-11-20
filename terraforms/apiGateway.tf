@@ -591,6 +591,9 @@ resource "aws_api_gateway_deployment" "deployment" {
     aws_api_gateway_integration.student_identify_integration, 
     aws_api_gateway_integration.options_student_identify_integration
     ]
+  triggers = {
+    redeployment = sha1(jsonencode(aws_api_gateway_rest_api.ams_apis_tf))
+  }
 
   rest_api_id = aws_api_gateway_rest_api.ams_apis_tf.id
   # stage_name  = "dev" 
