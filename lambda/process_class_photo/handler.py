@@ -20,7 +20,7 @@ rekognition = boto3.client('rekognition', region_name = 'us-east-1')
 dynamodbTableName = 'class_student_tf'
 dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
 studentTable = dynamodb.Table(dynamodbTableName)
-bucketName = 'class-images-tf'
+bucketName = 'classphotos-tf'
 
 dynamodbTableNameforRecords = 'attendance_records_tf'
 studentsRecordsTable = dynamodb.Table(dynamodbTableNameforRecords)
