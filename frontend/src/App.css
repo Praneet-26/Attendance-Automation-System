@@ -82,3 +82,68 @@ h1 {
 .small-button:hover {
   transform: scale(1.07);
 }
+.app-root {
+  min-height: 100vh;
+  background: #000;          /* black background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+.app-main {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.app-card {
+  text-align: center;
+}
+
+.app-title {
+  font-size: 3rem;
+  font-weight: 500;
+  color: #222;               /* dark grey like in the screenshot */
+  margin-bottom: 2.5rem;
+}
+
+.button-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.top-row {
+  display: flex;
+  gap: 2rem;
+}
+
+.bottom-row {
+  margin-top: 0.4rem;
+}
+
+.action-button {
+  min-width: 190px;
+  font-size: 1.1rem;
+  padding: 0.7rem 1.6rem;
+  border-radius: 6px;
+}
+
+/* small sign-out link in the top right */
+.signout-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  border: none;
+  background: transparent;
+  color: #ccc;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.signout-btn:hover {
+  color: #fff;
+}
