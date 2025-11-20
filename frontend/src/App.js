@@ -79,7 +79,7 @@ function App() {
     const visitorImageName = `${firstName}_${lastName}_${email_Id}.${fileExtension}`;
 
     // fetch(`https://chcxp4zpi8.execute-api.us-east-1.amazonaws.com/dev5/register-new-student/${visitorImageName}`, {
-    fetch(`${apiUrl}/new-student-registration-tf/${visitorImageName}`, {
+    fetch(`${apiUrl}/studentimages/${visitorImageName}`, {
       method: "PUT",
       headers: {
         // 'Content-Type' : 'image/jpeg'
@@ -98,7 +98,7 @@ function App() {
 
     const newfileExtension = classImage.name.split(".").pop();
     //  fetch(`https://chcxp4zpi8.execute-api.us-east-1.amazonaws.com/dev5/class/class-photos-bucket/${visitorImageName}`, {
-    fetch(`${apiUrl}/class/class-images-tf/${visitorImageName}`, {
+    fetch(`${apiUrl}/class/classphotos/${visitorImageName}`, {
       // Construct the API endpoint using the base URL
       method: "PUT",
       headers: {
