@@ -5,7 +5,7 @@ provider "aws" {
 
 #Creating s3 bucket to upload the student image in a s3 bucket.
 resource "aws_s3_bucket" "new-student-registration-tff" {
-  bucket = "studentimages"
+  bucket = "studentimages-tf"
   force_destroy = true
 
   tags = {
@@ -16,7 +16,7 @@ resource "aws_s3_bucket" "new-student-registration-tff" {
 
 #Creating bucket for student attendace authentication
 resource "aws_s3_bucket" "class-images-tff" {
-  bucket = "classphotos"
+  bucket = "classphotos-tf"
    force_destroy = true
 
   tags = {
