@@ -154,151 +154,152 @@ function App() {
   // /"SWEN-2", "SWEN-3", "SWEN-4"
 
   return (
-    <div>
-            <Authenticator>
-        {({ signOut }) => (
-          <main>
-            <div className="header">
-              <img src={logo} alt="Logo" />
-              <h1>Attendance Automation System</h1>
-              {/* <button onClick={() => Auth.signOut()}>Sign Out</button> */}
+    // <div>
+    //         <Authenticator>
+    //     {({ signOut }) => (
+    //       <main>
+    //         <div className="header">
+    //           <img src={logo} alt="Logo" />
+    //           <h1>Attendance Automation System</h1>
+    //           {/* <button onClick={() => Auth.signOut()}>Sign Out</button> */}
 
-              <Button onClick={signOut}>Sign Out</Button>
-            </div>
+    //           <Button onClick={signOut}>Sign Out</Button>
+    //         </div>
 
-            <h2>Welcome, Admin!!</h2>
-            <div className="buttons">
-              <div className="b">
-                <Button
-                  className="circular-button"
-                  onClick={toggleRegisterModal}>
-                  <img src={registrationImg} alt="registration" />
-                </Button>
-                <div>Registration</div>
-              </div>
-              <div className="b">
-                <Button className="circular-button" onClick={toggleUpdateModal}>
-                  <img src={addAttendanceImg} alt="addAttandance" />
-                </Button>
-                <div>Mark Attendance</div>
-              </div>
-            </div>
+    //         <h2>Welcome, Admin!!</h2>
+    //         <div className="buttons">
+    //           <div className="b">
+    //             <Button
+    //               className="circular-button"
+    //               onClick={toggleRegisterModal}>
+    //               <img src={registrationImg} alt="registration" />
+    //             </Button>
+    //             <div>Registration</div>
+    //           </div>
+    //           <div className="b">
+    //             <Button className="circular-button" onClick={toggleUpdateModal}>
+    //               <img src={addAttendanceImg} alt="addAttandance" />
+    //             </Button>
+    //             <div>Mark Attendance</div>
+    //           </div>
+    //         </div>
 
-            <Modal isOpen={updateModal} toggle={toggleUpdateModal}>
-              <ModalHeader color="black" toggle={toggleUpdateModal}>
-                Upload Attendance
-              </ModalHeader>
+    //         <Modal isOpen={updateModal} toggle={toggleUpdateModal}>
+    //           <ModalHeader color="black" toggle={toggleUpdateModal}>
+    //             Upload Attendance
+    //           </ModalHeader>
 
-              <ModalBody>
-                <Form onSubmit={handleUpdateSubmit}>
-                  <FormGroup>
-                    <Label for="upload_photo">Upload Class Photo</Label>
-                    <Input
-                      type="file"
-                      name="upload_photo"
-                      onChange={(e) => setclassImage(e.target.files[0])}
-                    />
-                  </FormGroup>
+    //           <ModalBody>
+    //             <Form onSubmit={handleUpdateSubmit}>
+    //               <FormGroup>
+    //                 <Label for="upload_photo">Upload Class Photo</Label>
+    //                 <Input
+    //                   type="file"
+    //                   name="upload_photo"
+    //                   onChange={(e) => setclassImage(e.target.files[0])}
+    //                 />
+    //               </FormGroup>
 
-                  <FormGroup>
-                    <Label for="date">Select Date</Label>
-                    <Input
-                      type="date"
-                      name="date"
-                      value={selectedDate}
-                      onChange={(e) => setSelectedDate(e.target.value)}
-                    />
-                  </FormGroup>
+    //               <FormGroup>
+    //                 <Label for="date">Select Date</Label>
+    //                 <Input
+    //                   type="date"
+    //                   name="date"
+    //                   value={selectedDate}
+    //                   onChange={(e) => setSelectedDate(e.target.value)}
+    //                 />
+    //               </FormGroup>
 
-                  <h3>{text_message}</h3>
-                  {studentlist.map((mylist, index) => (
-                    <p>
-                      {mylist.firstName} {mylist.lastName}
-                    </p>
-                  ))}
+    //               <h3>{text_message}</h3>
+    //               {studentlist.map((mylist, index) => (
+    //                 <p>
+    //                   {mylist.firstName} {mylist.lastName}
+    //                 </p>
+    //               ))}
 
-                  <h4>{absent_student_message}</h4>
-                  {absent_studentlist.map((mylist, index) => (
-                    <p>
-                      {mylist.firstName} {mylist.lastName}
-                    </p>
-                  ))}
+    //               <h4>{absent_student_message}</h4>
+    //               {absent_studentlist.map((mylist, index) => (
+    //                 <p>
+    //                   {mylist.firstName} {mylist.lastName}
+    //                 </p>
+    //               ))}
 
-                  <Button color="primary" type="submit">
-                    Submit
-                  </Button>
-                </Form>
-              </ModalBody>
-              <ModalFooter>
-                <Button color="secondary" onClick={toggleUpdateModal}>
-                  Cancel
-                </Button>
-              </ModalFooter>
-            </Modal>
+    //               <Button color="primary" type="submit">
+    //                 Submit
+    //               </Button>
+    //             </Form>
+    //           </ModalBody>
+    //           <ModalFooter>
+    //             <Button color="secondary" onClick={toggleUpdateModal}>
+    //               Cancel
+    //             </Button>
+    //           </ModalFooter>
+    //         </Modal>
 
-            <Modal isOpen={registerModal} toggle={toggleRegisterModal}>
-              <ModalHeader toggle={toggleRegisterModal}>
-                Add Student's Details
-              </ModalHeader>
-              <ModalBody>
-                <Form onSubmit={handleSubmit}>
-                  <FormGroup>
-                    <Label for="first_name">First Name</Label>
-                    <Input
-                      type="text"
-                      name="first_name"
-                      id="first_name"
-                      placeholder="Enter first name"
-                    />
-                  </FormGroup>
+    //         <Modal isOpen={registerModal} toggle={toggleRegisterModal}>
+    //           <ModalHeader toggle={toggleRegisterModal}>
+    //             Add Student's Details
+    //           </ModalHeader>
+    //           <ModalBody>
+    //             <Form onSubmit={handleSubmit}>
+    //               <FormGroup>
+    //                 <Label for="first_name">First Name</Label>
+    //                 <Input
+    //                   type="text"
+    //                   name="first_name"
+    //                   id="first_name"
+    //                   placeholder="Enter first name"
+    //                 />
+    //               </FormGroup>
 
-                  <FormGroup>
-                    <Label for="last_name">Last Name</Label>
-                    <Input
-                      type="text"
-                      name="last_name"
-                      id="last_name"
-                      placeholder="Enter last name"
-                    />
-                  </FormGroup>
+    //               <FormGroup>
+    //                 <Label for="last_name">Last Name</Label>
+    //                 <Input
+    //                   type="text"
+    //                   name="last_name"
+    //                   id="last_name"
+    //                   placeholder="Enter last name"
+    //                 />
+    //               </FormGroup>
 
-                  <FormGroup>
-                    <Label for="email_id">RIT Username</Label>
-                    <Input
-                      type="text"
-                      name="email_id"
-                      id="email_id"
-                      placeholder="Enter RIT Username"
-                    />
-                  </FormGroup>
+    //               <FormGroup>
+    //                 <Label for="email_id">RIT Username</Label>
+    //                 <Input
+    //                   type="text"
+    //                   name="email_id"
+    //                   id="email_id"
+    //                   placeholder="Enter RIT Username"
+    //                 />
+    //               </FormGroup>
 
-                  <FormGroup>
-                    <Input
-                      type="file"
-                      name="image"
-                      onChange={(e) => setImage(e.target.files[0])}
-                    />
-                  </FormGroup>
+    //               <FormGroup>
+    //                 <Input
+    //                   type="file"
+    //                   name="image"
+    //                   onChange={(e) => setImage(e.target.files[0])}
+    //                 />
+    //               </FormGroup>
 
-                  <FormGroup>
-                    <h3>{new_student_msg}</h3>
-                  </FormGroup>
+    //               <FormGroup>
+    //                 <h3>{new_student_msg}</h3>
+    //               </FormGroup>
 
-                  <Button color="primary" type="submit">
-                    Submit
-                  </Button>
-                </Form>
-              </ModalBody>
-              <ModalFooter>
-                <Button color="secondary" onClick={toggleRegisterModal}>
-                  Cancel
-                </Button>
-              </ModalFooter>
-            </Modal>
-          </main>
-        )}
-      </Authenticator> 
-    </div>
+    //               <Button color="primary" type="submit">
+    //                 Submit
+    //               </Button>
+    //             </Form>
+    //           </ModalBody>
+    //           <ModalFooter>
+    //             <Button color="secondary" onClick={toggleRegisterModal}>
+    //               Cancel
+    //             </Button>
+    //           </ModalFooter>
+    //         </Modal>
+    //       </main>
+    //     )}
+    //   </Authenticator> 
+    // </div>
+
    /* <div className="App">
       <h1>Attendance Automation</h1>
 
@@ -325,6 +326,166 @@ function App() {
           </div>
         ))}
       </div> */
+    <div className="app-root">
+    <Authenticator>
+      {({ signOut }) => (
+        <main className="app-main">
+          {/* Optional small sign-out button in the corner */}
+          <button className="signout-btn" onClick={signOut}>
+            Sign out
+          </button>
+
+          <div className="app-card">
+            <h1 className="app-title">Attendance Automation</h1>
+
+            <div className="button-section">
+              <div className="top-row">
+                <Button
+                  color="primary"
+                  className="action-button"
+                  onClick={toggleRegisterModal}
+                >
+                  Register
+                </Button>
+
+                <Button
+                  color="success"
+                  className="action-button"
+                  onClick={toggleUpdateModal}
+                >
+                  Mark Attendance
+                </Button>
+              </div>
+
+              <div className="bottom-row">
+                <Button
+                  color="info"
+                  className="action-button"
+                  // hook this up later if you add reports
+                >
+                  View Reports
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* ---------- MODALS (unchanged functionality) ---------- */}
+
+          <Modal isOpen={updateModal} toggle={toggleUpdateModal}>
+            <ModalHeader color="black" toggle={toggleUpdateModal}>
+              Upload Attendance
+            </ModalHeader>
+
+            <ModalBody>
+              <Form onSubmit={handleUpdateSubmit}>
+                <FormGroup>
+                  <Label for="upload_photo">Upload Class Photo</Label>
+                  <Input
+                    type="file"
+                    name="upload_photo"
+                    onChange={(e) => setclassImage(e.target.files[0])}
+                  />
+                </FormGroup>
+
+                <FormGroup>
+                  <Label for="date">Select Date</Label>
+                  <Input
+                    type="date"
+                    name="date"
+                    value={selectedDate}
+                    onChange={(e) => setSelectedDate(e.target.value)}
+                  />
+                </FormGroup>
+
+                <h3>{text_message}</h3>
+                {studentlist.map((mylist, index) => (
+                  <p key={`present-${index}`}>
+                    {mylist.firstName} {mylist.lastName}
+                  </p>
+                ))}
+
+                <h4>{absent_student_message}</h4>
+                {absent_studentlist.map((mylist, index) => (
+                  <p key={`absent-${index}`}>
+                    {mylist.firstName} {mylist.lastName}
+                  </p>
+                ))}
+
+                <Button color="primary" type="submit">
+                  Submit
+                </Button>
+              </Form>
+            </ModalBody>
+            <ModalFooter>
+              <Button color="secondary" onClick={toggleUpdateModal}>
+                Cancel
+              </Button>
+            </ModalFooter>
+          </Modal>
+
+          <Modal isOpen={registerModal} toggle={toggleRegisterModal}>
+            <ModalHeader toggle={toggleRegisterModal}>
+              Add Student&apos;s Details
+            </ModalHeader>
+            <ModalBody>
+              <Form onSubmit={handleSubmit}>
+                <FormGroup>
+                  <Label for="first_name">First Name</Label>
+                  <Input
+                    type="text"
+                    name="first_name"
+                    id="first_name"
+                    placeholder="Enter first name"
+                  />
+                </FormGroup>
+
+                <FormGroup>
+                  <Label for="last_name">Last Name</Label>
+                  <Input
+                    type="text"
+                    name="last_name"
+                    id="last_name"
+                    placeholder="Enter last name"
+                  />
+                </FormGroup>
+
+                <FormGroup>
+                  <Label for="email_id">RIT Username</Label>
+                  <Input
+                    type="text"
+                    name="email_id"
+                    id="email_id"
+                    placeholder="Enter RIT Username"
+                  />
+                </FormGroup>
+
+                <FormGroup>
+                  <Input
+                    type="file"
+                    name="image"
+                    onChange={(e) => setImage(e.target.files[0])}
+                  />
+                </FormGroup>
+
+                <FormGroup>
+                  <h3>{new_student_msg}</h3>
+                </FormGroup>
+
+                <Button color="primary" type="submit">
+                  Submit
+                </Button>
+              </Form>
+            </ModalBody>
+            <ModalFooter>
+              <Button color="secondary" onClick={toggleRegisterModal}>
+                Cancel
+              </Button>
+            </ModalFooter>
+          </Modal>
+        </main>
+      )}
+    </Authenticator>
+  </div>
   );
 }
 
