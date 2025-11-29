@@ -50,7 +50,10 @@ resource "aws_lambda_permission" "s3_invoke_permission" {
 }
 
 resource "aws_s3_bucket_notification" "bucket_notification" {
-  bucket = aws_s3_bucket.new-student-registration-tff.id
+  bucket = aws_s3_bucket.new-student-registration-tff.bucket
+  depends_on = [
+    aws_lambda_permission.s3_invoke_permission
+  ]
 
   lambda_function {
     lambda_function_arn = aws_lambda_function.terraform_lambda_func.arn
