@@ -42,11 +42,11 @@ resource "aws_api_gateway_integration" "s3_integration" {
   http_method = aws_api_gateway_method.put_method.http_method
   integration_http_method = "PUT"
   type = "AWS"
-  uri = "arn:aws:apigateway:us-east-1:s3:path/{bucket}/{filename}"
+  uri = "arn:aws:apigateway:us-east-1:s3:path/studentimages-tf/{filename}"
   
 
    request_parameters = {
-    "integration.request.path.bucket"   = "method.request.path.bucket"
+    # "integration.request.path.bucket"   = "method.request.path.bucket"
     "integration.request.path.filename" = "method.request.path.filename"
   }
 #    request_templates = {
@@ -241,11 +241,11 @@ resource "aws_api_gateway_integration" "api2_s3_integration" {
   http_method = aws_api_gateway_method.api2_put_method.http_method
   integration_http_method = "PUT"
   type = "AWS"
-  uri = "arn:aws:apigateway:us-east-1:s3:path/{bucket}/{filename}"
+  uri = "arn:aws:apigateway:us-east-1:s3:path/classphotos-tf/{filename}"
   
 
    request_parameters = {
-    "integration.request.path.bucket"   = "method.request.path.bucket"
+    # "integration.request.path.bucket"   = "method.request.path.bucket"
     "integration.request.path.filename" = "method.request.path.filename"
   }
 
