@@ -465,6 +465,7 @@ resource "aws_api_gateway_method" "get_student_identify_method" {
   authorization = "NONE" 
 }
 
+
 # Integration with Lambda function for /studentidentify GET method
 resource "aws_api_gateway_integration" "student_identify_integration" {
   rest_api_id = aws_api_gateway_rest_api.ams_apis_tf.id
@@ -500,9 +501,10 @@ resource "aws_lambda_permission" "apigw" {
  
   #Change the following
   # function_name = aws_lambda_function.student_registration.arn
-   function_name = aws_lambda_function.terraform_lambda_func_authentication.arn
+   function_name = aws_lambda_function.terraform_lambda_func_authentication.function_name
   principal     = "apigateway.amazonaws.com"
-  source_arn = "${aws_api_gateway_rest_api.ams_apis_tf.execution_arn}/*/*"
+  source_arn = "${aws_api_gateway_rest_api.ams_apis_tf.execution_arn}/*/GET/studentidentify"
+
 }
 
 # Method Response for /studentidentify GET method
@@ -517,7 +519,9 @@ resource "aws_api_gateway_method_response" "student_identify_method_response" {
   }
 
   response_parameters = {
-    "method.response.header.Access-Control-Allow-Origin" = true
+  "method.response.header.Access-Control-Allow-Origin" = true,
+  "method.response.header.Access-Control-Allow-Headers" = true,
+  "method.response.header.Access-Control-Allow-Methods" = true
   }
 }
 
@@ -592,7 +596,7 @@ resource "aws_api_gateway_deployment" "deployment" {
     aws_api_gateway_integration.options_student_identify_integration
     ]
   triggers = {
-    redeployment = sha1(jsonencode(aws_api_gateway_rest_api.ams_apis_tf))
+    redeployment = sha1(timestamp())
   }
 
   rest_api_id = aws_api_gateway_rest_api.ams_apis_tf.id
