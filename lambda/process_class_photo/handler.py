@@ -152,9 +152,11 @@ def buildResponse(statusCode, body=None):
     response = {
         'statusCode' : statusCode,
         'headers': {
-            'Content-Type' : 'application/json',
-            'Access-Control-Allow-Origin': '*'
-            # 'Access-Control-Allow-Methods': 'OPTIONS,GET'
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Credentials': True,
+            'Access-Control-Allow-Headers': '*',
+            'Access-Control-Allow-Methods': 'GET,OPTIONS'
         }
     }
     if body is not None:

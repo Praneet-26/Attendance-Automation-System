@@ -65,32 +65,33 @@ function App() {
     setnew_student_msg("");
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+const handleSubmit = (event) => {
+  event.preventDefault();
 
-    const firstName = event.target.first_name.value;
-    const lastName = event.target.last_name.value;
-    const email_Id = event.target.email_id.value;
-    const fileExtension = image.name.split(".").pop();
-    event.target.first_name.value = "";
-    event.target.last_name.value = "";
-    event.target.email_id.value = "";
+  const firstName = event.target.first_name.value;
+  const lastName = event.target.last_name.value;
+  const email_Id = event.target.email_id.value;
 
-    const visitorImageName = `${firstName}_${lastName}_${email_Id}.${fileExtension}`;
+  const fileExtension = image.name.split(".").pop();
+  const visitorImageName = `${firstName}_${lastName}_${email_Id}.${fileExtension}`;
 
-    // fetch(`https://chcxp4zpi8.execute-api.us-east-1.amazonaws.com/dev5/register-new-student/${visitorImageName}`, {
-    fetch(`${apiUrl}/studentimages-tf/${visitorImageName}`, {
-      method: "PUT",
-      headers: {
-        // 'Content-Type' : 'image/jpeg'
-        "Content-Type": `image/${fileExtension}`,
-      },
-      body: image,
-    }).catch((error) => {
-      console.error(error);
-    });
-    setnew_student_msg("New Student added successfully");
-  };
+  // reset form fields
+  event.target.first_name.value = "";
+  event.target.last_name.value = "";
+  event.target.email_id.value = "";
+
+  const uploadUrl = `${apiUrl}/studentimages-tf/${visitorImageName}`;
+
+  fetch(uploadUrl, {
+    method: "PUT",
+    headers: {
+      "Content-Type": `image/${fileExtension}`,
+    },
+    body: image,
+  })
+    .then(() => setnew_student_msg("New Student added successfully"))
+    .catch((err) => console.error("UPLOAD FAILED:", err));
+};
 
   const handleUpdateSubmit = (event) => {
     event.preventDefault();
