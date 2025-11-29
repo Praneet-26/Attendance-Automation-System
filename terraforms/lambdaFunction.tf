@@ -18,7 +18,7 @@ resource "aws_lambda_function" "terraform_lambda_func" {
   filename      = data.archive_file.zip_the_student_registration_code.output_path
   function_name = "student_registration_tf"
   role          = aws_iam_role.role_for_lamda_functions_tf.arn
-  handler       = "student_registration_tf.lambda_handler"
+  handler       = "handler.lambda_handler"
   runtime       = "python3.8"
   memory_size   = 500
   timeout       = 50
@@ -33,7 +33,7 @@ resource "aws_lambda_function" "terraform_lambda_func_authentication" {
   filename      = data.archive_file.zip_the_student_authentication_code.output_path
   function_name = "student_authentication_tf"
   role          = aws_iam_role.role_for_lamda_functions_tf.arn
-  handler       = "student_authentication_tf.lambda_handler"
+  handler       = "handler.lambda_handler"
   runtime       = "python3.8"
   memory_size   = 500
   timeout       = 50

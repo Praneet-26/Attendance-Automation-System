@@ -141,7 +141,7 @@ const handleSubmit = (event) => {
       method: "GET",
       headers: {
         Accept: "application/json",
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
         //  'Origin': 'http://localhost:3000'
       },
     })
