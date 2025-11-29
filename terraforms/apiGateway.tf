@@ -14,7 +14,7 @@ resource "aws_api_gateway_rest_api" "ams_apis_tf" {
 resource "aws_api_gateway_resource" "bucket_resource" {
   rest_api_id = aws_api_gateway_rest_api.ams_apis_tf.id
   parent_id   = aws_api_gateway_rest_api.ams_apis_tf.root_resource_id
-  path_part   = "{bucket}"
+  path_part   = "studentimages-tf"
 }
 
 resource "aws_api_gateway_resource" "filename_resource" {
@@ -213,7 +213,7 @@ resource "aws_api_gateway_resource" "api2_class_resource" {
 resource "aws_api_gateway_resource" "ap2_bucket_resource" {
   rest_api_id = aws_api_gateway_rest_api.ams_apis_tf.id
   parent_id   = aws_api_gateway_resource.api2_class_resource.id
-  path_part   = "{bucket}"
+  path_part   = "classphotos-tf"
 }
 
 resource "aws_api_gateway_resource" "ap2_filename_resource" {
