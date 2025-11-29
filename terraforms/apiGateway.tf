@@ -30,7 +30,6 @@ resource "aws_api_gateway_method" "put_method" {
   authorization = "NONE" 
 
    request_parameters = {
-    "method.request.path.bucket" = true
     "method.request.path.filename" = true
   }
 }
@@ -229,7 +228,6 @@ resource "aws_api_gateway_method" "api2_put_method" {
   authorization = "NONE" 
 
    request_parameters = {
-    "method.request.path.bucket" = true
     "method.request.path.filename" = true
   }
 }
