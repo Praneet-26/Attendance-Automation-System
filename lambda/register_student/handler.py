@@ -2,6 +2,7 @@ import boto3
 # from ...homepage.PythonFunctions.SendEmail import send_email
 from botocore.exceptions import ClientError
 import os
+import urllib.parse
 
 s3 = boto3.client('s3')
 rekognition = boto3.client('rekognition', region_name = 'us-east-1')
@@ -20,7 +21,9 @@ def lambda_handler(event, context):
     print('Hi event')
     print(event)
     bucket = event['Records'][0]['s3']['bucket']['name']
-    key = event['Records'][0]['s3']['object']['key']
+    key = urllib.parse.unquote(event['Records'][0]['s3']['object']['key'])
+    print(bucket)
+    print(key)
 
     try:
         response = index_employee_image(bucket, key)
